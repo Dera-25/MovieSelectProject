@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Movie Catalog</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>🎬 Movie Catalog</h1>
+
+    <!-- Hide/Show Movies -->
+    <button id="toggleMoviesBtn" onclick="toggleMovies()">Movies List</button>
+
+    <!-- Main Movie List -->
+    <section id="allMoviesSection">
+        <h2>All Movies</h2>
+        <ul id="movieList"></ul>
+    </section>
+
+    <!-- Add Movie -->
+    <section>
+        <h2>Add Movie</h2>
+        <form id="addMovieForm">
+            <input type="text" id="addTitle" placeholder="Title" required />
+            <select id="addGenreSelect" required></select>
+            <select id="addAgeRating" required>
+                <option value="">Select Age Rating</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+            <button type="submit" onclick="addMovie(event)">Add Movie</button>
+            <button type="button" onclick="clearAddMovie()">Clear</button>
+        </form>
+    </section>
+
+    <!-- Update Movie -->
+    <section>
+        <h2>Update Movie</h2>
+        <form id="updateMovieForm">
+            <input type="number" id="updateId" placeholder="Movie ID" required />
+            <input type="text" id="updateTitle" placeholder="New Title" />
+            <select id="updateGenreSelect"></select>
+            <select id="updateAgeRating">
+                <option value="">Select Age Rating</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+            <button type="submit" onclick="updateMovie(event)">Update Movie</button>
+            <button type="button" id="clearUpdateResult" onclick="clearUpdate()">Clear</button>
+        </form>
+    </section>
+
+    <!-- Get Movie by ID -->
+    <section>
+        <h2>Get Movie by ID</h2>
+        <form id="getMovieForm">
+            <input type="number" id="getMovieId" placeholder="Movie ID" required />
+            <button type="submit" onclick="getMovieById(event)">Get Movie</button>
+            <button type="button" onclick="clearMovieResult()">Clear</button>
+        </form>
+        <div id="movieResult"></div>
+    </section>
+
+    <!-- Delete Movie by ID -->
+    <section>
+        <h2>Delete Movie by ID</h2>
+        <form id="deleteMovieForm">
+            <input type="number" id="deleteMovieId" placeholder="Movie ID" required />
+            <button type="submit" onclick="deleteMovie(event)">Delete Movie</button>
+        </form>
+    </section>
+    
+    <!-- Get Genre of a Movie -->
+    <section>
+        <h2>Get Genre of a Movie</h2>
+        <form id="getGenreOfMovieForm">
+            <input type="number" id="movieGenreId" placeholder="Movie ID" required />
+            <button type="submit" onclick="getGenreOfMovie(event)">Get Genre</button>
+            <button type="button" onclick="clearMovieGenre()">Clear</button>
+        </form>
+        <div id="movieGenreResult"></div>
+    </section>
+</div>
+<div class="container">
+    <hr>
+    <h2>Manage Genres</h2>
+
+    <!-- List all genres -->
+    <button onclick="getAllGenres()">Get All Genres</button>
+    <button onclick="clearGenresList()">Clear Genres List</button>
+    <div id="genresList"></div>
+
+    <!-- Get Movies in a Specific Genre -->
+    <h3>Get Movies in a Genre</h3>
+    <div>
+        <select id="genreSelectForMovies"></select>
+        <button type="button" onclick="getMoviesByGenre()">Get Movies</button>
+        <button type="button" onclick="clearMoviesByGenre()">Clear</button>
+    </div>
+    <div id="moviesByGenreList"></div>
+
+    <!-- Add Genre -->
+    <h3>Add Genre</h3>
+    <input type="text" id="newGenreName" placeholder="Genre Name">
+    <button onclick="addGenre(event)">Add Genre</button>
+
+    <!-- Update Genre -->
+    <h3>Update Genre</h3>
+    <input type="number" id="updateGenreId" placeholder="Genre ID">
+    <input type="text" id="updateGenreName" placeholder="New Genre Name">
+    <button onclick="updateGenre()">Update Genre</button>
+    <button onclick="clearUpdateGenre()">Clear</button>
+
+    <!-- Delete Genre -->
+    <h3>Delete Genre</h3>
+    <input type="number" id="deleteGenreId" placeholder="Genre ID">
+    <button onclick="deleteGenre()">Delete Genre</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
