@@ -1,59 +1,122 @@
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f7fa;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+/* Container */
 .container {
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    text-align: center;
-}
-
+/* Section cards */
 section {
-    margin-bottom: 25px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
 }
 
+section:hover {
+    transform: translateY(-2px);
+}
+
+/* Section titles */
+h2 {
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Forms */
 form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+    display: grid;
+    gap: 12px;
 }
 
-input, select, button {
-    padding: 10px;
-    font-size: 16px;
+label {
+    font-weight: bold;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.2s ease;
 }
 
-li {
-    padding: 6px;
-    border-bottom: 1px solid #ddd;
+input:focus, select:focus {
+    border-color: #4e9af1;
 }
+
+/* Buttons */
 button {
-    background-color: #2a9df4;
-    color: white;
+    background-color: #4e9af1;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    padding: 10px 14px;
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #1a5a8c;
+    background-color: #3c85d1;
+    transform: translateY(-1px);
 }
-input{
-    max-width: fit-content;
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Results display */
+.results {
+    background: #f9fbfd;
+    border: 1px solid #e1e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Movie list items */
+.movie-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.movie-item:last-child {
+    border-bottom: none;
+}
+
+.movie-title {
+    font-weight: bold;
+    color: #2b6cb0;
+}
+
+.movie-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Genre tags */
+.genre-tag {
+    display: inline-block;
+    background-color: #e1ecf4;
+    color: #0366d6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin-left: 5px;
 }
